@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Formulario</title>
     <style>
-    form {
+    .form {
         width: 400px;
-        height: 1500px;
+        height: 750px;
         background: #e6e6e6;
         border-radius: 8px;
         box-shadow: 0 0 40px -10px #000;
         padding: 20px 30px;        
         box-sizing: border-box;
         font-family: "Montserrat", sans-serif;
+        font-weight: 400;
         position: relative;
+        margin: 0px auto;
     }
     .select-css {
         display: block;
-        font-size: 16px;
+        font-size: 14px;
         font-family: "Verdana", sans-serif;
         font-weight: 400;
         color: #444;
@@ -42,7 +44,8 @@
     }
     body {
         font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-        background-color: #ECEFF1;
+        font-weight: 400;
+        background-color: whitesmoke;
     }
 
     #notify.error {
@@ -51,11 +54,11 @@
     </style>
 </head>
 <body>
-    <form>
+    <form class="form">
         <p><b>FORMULARIO</b></p>
         <div>
             <p>Identificador:</p>
-            <input type="number" min="0" placeholder="Identificador.." style="width : 320px;"></input>
+            <input type="number" min="0" placeholder="Coloque el número de su identificación" style="width : 320px;"></input>
             <p>Pais:</p>
             <div >
                 <select class= "select-css">
@@ -291,12 +294,14 @@
             <input placeholder="Debe empezar por cll, cra, av, anv, trans.." style="width : 320px;" ></input>
             <p>CC Ususario:</p>
             <input type="text" placeholder="Nombre de ususario.." style="width : 320px;" minlength="10" maxlength="20"></input>
+            <p>CC contraseña:</p>
+            <input type="password" placeholder="Ingrese su contraseña" style="width : 320px;" minlength="5" maxlength="15"></input>
             <p>Email:</p>
             <input type="email" placeholder="Correo electronico.." style="width : 320px;" minlength="5" maxlength="120"></input>
             <p>Telefono:</p>
-            <input type="number" min="1000000000" placeholder="Identificador.." style="width : 320px;"></input>
+            <input type="number" min="1000000000" minlength="10" maxlength="10" placeholder="Coloque su número de telefono" style="width : 320px;"></input>
             <br><br>
-            <input type="submit" value="Enviar"> 
+            <input type="submit" value="Registrar"> 
         </div>
     </form>
 </body>
