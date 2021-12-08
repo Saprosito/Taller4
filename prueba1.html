@@ -7,6 +7,15 @@
     <script type="text/javascript" src="validarFormulario.js"></script>
     
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script>
+        function validarEmail(email){
+            var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+            var esValido= expReg.test(email);
+            if(esValido == false){
+                alert('El correo no es valido');
+            }
+        }
+    </script>
 </head>
 <body>
     <form class="form" name="addForm" id="addForm" method="post"> 
@@ -247,7 +256,13 @@
             <p>Apellidos:</p>
             <input id="apellido" placeholder="Apellidos con maximo 25 caracteres.." style="width : 320px;" minlength="3" maxlength="25"></input>
             <p>Direccion:</p>
-            <input id="direccion" placeholder="Debe empezar por cll, cra, av, anv, trans.." style="width : 320px;" ></input>
+                <select>
+                    <option value="Afganistan">Cll</option>
+                    <option value="Afganistan">Cra</option>
+                    <option value="Albania">Anv</option>
+                    <option value="Algeria">Trans</option>
+                </select>
+                <input id="direccion" placeholder="seleccione si es cll, cra, etc.." style="width : 260px;" ></input>
             <p>CC Ususario:</p>
             <input id="usuario" type="text" placeholder="Nombre de ususario.." style="width : 320px;" minlength="10" maxlength="20"></input>
             <p>CC contraseña:</p>
@@ -261,7 +276,7 @@
             <p>Telefono:</p>
             <input id="telefono" type="number" min="1000000000" minlength="10" maxlength="10" placeholder="Coloque su número de telefono" style="width : 320px;"></input>
             <br><br>
-            <input type="button" onclick="validarFormulario();" value="Enviar" >
+            <input type="button" onclick="validarFormulario(), validarEmail(form.email.value);" value="Enviar" >
         </div>
     </form>
 </body>

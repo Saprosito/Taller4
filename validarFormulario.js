@@ -80,13 +80,23 @@ function validarFormulario(){
         document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese su email.</div> ';
         formulario.email.focus();
         return false;
-    }
+    }    
+
     else{
         document.getElementById("alerta").innerHTML="";
     }
 
     if(formulario.telefono.value == ""){
         document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese su telefono.</div> ';
+        formulario.telefono.focus();
+        return false;
+    }
+    else{
+        document.getElementById("alerta").innerHTML="";
+    }
+
+    if(formulario.telefono.value <= "100000"){
+        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese un numero de telefono valido.</div> ';
         formulario.telefono.focus();
         return false;
     }
