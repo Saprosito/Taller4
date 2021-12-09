@@ -1,3 +1,11 @@
+function validarEmail(email){
+    var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    var esValido= expReg.test(email);
+    if(esValido == false){
+        alert('El correo no es valido');
+    }
+}
+
 function validarFormulario(){
    
     var formulario = document.addForm; 
@@ -76,15 +84,6 @@ function validarFormulario(){
         document.getElementById("alerta").innerHTML="";
     }
 
-    if(formulario.email.value == ""){
-        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese su email.</div> ';
-        formulario.email.focus();
-        return false;
-    }    
-
-    else{
-        document.getElementById("alerta").innerHTML="";
-    }
 
     if(formulario.telefono.value == ""){
         document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese su telefono.</div> ';
@@ -104,14 +103,10 @@ function validarFormulario(){
         document.getElementById("alerta").innerHTML="";
     }
 
-
     formulario.submit();
 }
 
-function validarEmail(email){
-    var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    var esValido= expReg.test(email);
-    if(esValido == false){
-        alert('El correo no es valido');
-    }
-}
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
