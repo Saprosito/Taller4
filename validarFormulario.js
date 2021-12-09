@@ -1,13 +1,26 @@
-function validarEmail(email){
-    var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    var esValido= expReg.test(email);
-    if(esValido == false){
-        alert('El correo no es valido');
+
+function validacion(){
+    var email=document.getElementById("email").value;
+    var contador=0;
+    var contador2=0;
+    for(i=1;i<email.length; i++){
+        if(email.charAt(i-1)=="@"){
+            contador++;
+        }
+        if(contador==1){
+            if(email.charAt(i-1)=="."){
+                contador2++;
+            }
+        }
+    }
+    if(contador==1 && contador2==2 || contador==1){
+    }else{
+        alert("Correo no valido");
     }
 }
 
 function validarFormulario(){
-   
+
     var formulario = document.addForm; 
 
     if(formulario.id.value == ""){
@@ -106,7 +119,7 @@ function validarFormulario(){
     formulario.submit();
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
+function ejecutar(){
+    validacion();
+    validarFormulario();
+}
