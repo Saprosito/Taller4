@@ -1,24 +1,3 @@
-
-function validacion(){
-    var email=document.getElementById("email").value;
-    var contador=0;
-    var contador2=0;
-    for(i=1;i<email.length; i++){
-        if(email.charAt(i-1)=="@"){
-            contador++;
-        }
-        if(contador==1){
-            if(email.charAt(i-1)=="."){
-                contador2++;
-            }
-        }
-    }
-    if(contador==1 && contador2==2 || contador==1){
-    }else{
-        alert("Correo no valido");
-    }
-}
-
 function validarFormulario(){
 
     var formulario = document.addForm; 
@@ -107,6 +86,35 @@ function validarFormulario(){
         document.getElementById("alerta").innerHTML="";
     }
 
+    if(formulario.email.value == ""){
+        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese su correo.</div> ';
+        formulario.telefono.focus();
+        return false;
+    }
+    else{
+        document.getElementById("alerta").innerHTML="";
+    }
+
+    var email=document.getElementById("email").value;
+    var contador=0;
+    var contador2=0;
+    for(i=1;i<email.length; i++){
+        if(email.charAt(i-1)=="@"){
+            contador++;
+        }
+        if(contador==1){
+            if(email.charAt(i-1)=="."){
+                contador2++;
+            }
+        }
+    }
+    if(contador==1 && contador2==2 || contador==1){
+    }else{
+        document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese un correo valido.</div> ';
+        formulario.email.focus();
+        return false;
+    }
+
     if(formulario.telefono.value <= "100000"){
         document.getElementById("alerta").innerHTML = '<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Favor ingrese un numero de telefono valido.</div> ';
         formulario.telefono.focus();
@@ -119,7 +127,3 @@ function validarFormulario(){
     formulario.submit();
 }
 
-function ejecutar(){
-    validacion();
-    validarFormulario();
-}
